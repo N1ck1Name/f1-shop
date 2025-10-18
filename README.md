@@ -1,18 +1,37 @@
-# React + Vite
+# 🏎️ F1 Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Інтернет-магазин, натхненний Формулою 1 🏁  
+*Навчальний проект для портфоліо Front-End розробника.*
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🏁 Опис проекту
+**F1 Shop** — це сучасний інтернет-магазин, створений з нуля на **React + Vite**.  
+Проект демонструє навички роботи з компонентами, маршрутизацією, станом і структурою SPA-додатків.  
+Тематика магазину — **Формула 1**, з товарами, присвяченими командам, пілотам і фанам перегонів.
 
-## React Compiler
+💡 У майбутньому планується модуль аналітики: популярність товарів, тренди пошуку та статистика продажів.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ⚙️ Технології
 
-## Expanding the ESLint configuration
+| Категорія | Технології |
+|------------|-------------|
+| **Front-End** | React, Vite, React Router |
+| **Стилізація** | Tailwind CSS |
+| **Дані** | JSON / локальні масиви |
+| **Інструменти** | Git, GitHub, VS Code |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Функціональність
+
+✅ Головна сторінка з товарами  
+✅ Компоненти: Navbar, ProductCard, Footer  
+✅ Сторінка магазину (Shop)  
+✅ Адаптивний дизайн  
+🔜 Кошик покупок  
+🔜 Аналітика популярності товарів  
+🔜 Пошук і фільтрація  
+
+---
