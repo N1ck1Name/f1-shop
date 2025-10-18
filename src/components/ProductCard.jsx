@@ -1,18 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+function ProductCard({ product, onAddToCart }) {
   return (
-    <div className="border p-4 rounded shadow hover:shadow-lg">
-      <img src={product.image} alt={product.name} className="w-full h-48 object-cover mb-2" />
-      <h3 className="font-bold text-lg">{product.name}</h3>
-      <p className="text-gray-600">{product.category}</p>
-      <p className="text-gray-800 font-semibold">${product.price}</p>
-      <p className="text-yellow-500">⭐ {product.rating}</p>
-      <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition">
+      <Link to={`/product/${product.id}`}>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="rounded-lg mb-3 w-full object-cover"
+        />
+        <h3 className="font-bold text-lg hover:text-red-600">{product.name}</h3>
+      </Link>
+      <p className="text-gray-700 mb-2">{product.price} ₴</p>
+      <button
+        onClick={onAddToCart}
+        className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-lg transition"
+      >
         Додати в кошик
       </button>
     </div>
   );
-};
+}
 
 export default ProductCard;

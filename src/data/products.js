@@ -14,7 +14,7 @@ export const products = [
     category: "Аксесуари",
     price: 30,
     rating: 4.5,
-    image: "/assets/redbull-cap.jpg",
+    image: "/images/RedBull Hat.jpg",
     description: "Кепка Red Bull Racing, офіційний мерч"
   },
   {
