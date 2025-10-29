@@ -1,0 +1,11 @@
+:root{
+  --color-bg:#0d0d0d;
+  --color-text:#ffffff;
+  --color-muted:#bdbdbd;
+  --color-border:#1e1e1f;
+  --color-surface:#121214;
+  --color-accent:#e10600; /* F1-червоний */
+  --radius:12px;
+  --shadow-lg:0 8px 30px rgba(225,6,0,.08);
+  --transition:.2s ease;
+}

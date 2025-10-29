@@ -1,0 +1,28 @@
+.contact-page {
+  padding: 40px 0;
+  color: #fff;
+}
+
+.contact-page .page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #e10600;
+}
+
+.contact-page p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #e7e7e7;
+}
+
+.contact-page a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.contact-page a:hover {
+  color: #e10600;
+}
