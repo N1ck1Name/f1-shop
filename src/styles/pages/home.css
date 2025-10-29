@@ -1,0 +1,92 @@
+/* ===== Головний контейнер ===== */
+.home {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1606150934615-3bbbf2b68e45?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding-top: 24px;
+}
+
+/* ===== Контейнер з контентом ===== */
+.home-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 90%;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* ===== Заголовок ===== */
+.home-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #ff0000;
+}
+
+/* ===== Текст ===== */
+.home-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #f1f1f1;
+  max-width: 56ch;
+  margin-inline: auto;
+}
+
+/* ===== Кнопка ===== */
+.home-button {
+  background-color: #e10600;
+  color: #fff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.home-button:hover {
+  background-color: #b80000;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+}
+
+/* ===== Анімація появи ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Адаптивність ===== */
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .home-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}

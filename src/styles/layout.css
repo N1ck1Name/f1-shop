@@ -1,0 +1,26 @@
+/* Контейнер і базові зони */
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #0f0f10;
+  border-bottom: 1px solid #1e1e1f;
+}
+
+main {
+  padding: 32px 0;
+}
+
+footer {
+  margin-top: 48px;
+  border-top: 1px solid #1e1e1f;
+  background: #0f0f10;
+  padding: 16px 0;
+  color: #bdbdbd;
+  font-size: 0.95rem;
+}

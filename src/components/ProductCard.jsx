@@ -1,24 +1,49 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/components/productcard.css";
 
 function ProductCard({ product, onAddToCart }) {
+  const { id, image, name, category, price } = product;
+
+  const format = (n) =>
+    new Intl.NumberFormat("uk-UA", { maximumFractionDigits: 2 }).format(n);
+
+  const handleAdd = () => {
+  if (onAddToCart) onAddToCart(product);
+  };
+
   return (
-    <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition">
-      <Link to={`/product/${product.id}`}>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="rounded-lg mb-3 w-full object-cover"
-        />
-        <h3 className="font-bold text-lg hover:text-red-600">{product.name}</h3>
+    <div className="product-card" role="article" aria-label={name}>
+      <Link to={`/product/${id}`} aria-label={`Переглянути ${name}`}>
+        <div className="product-card_img">
+          <img
+            src={image}
+            alt={name}
+            loading="lazy"
+            width={600}
+            height={400}
+            draggable="false"
+            onError={(e) => { e.currentTarget.src = "/fallback-product.jpg"; }}
+          />
+        </div>
+
+        <div className="product-card_body">
+          <h3 className="product-card_title">{name}</h3>
+          <p className="product-card_meta">{category}</p>
+          <p className="product-card_price">{format(price)} ₴</p>
+        </div>
       </Link>
-      <p className="text-gray-700 mb-2">{product.price} ₴</p>
-      <button
-        onClick={onAddToCart}
-        className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-lg transition"
-      >
-        Додати в кошик
-      </button>
+
+      <div className="product-card_actions">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleAdd}
+          aria-label={`Додати ${name} в кошик`}
+        >
+          Додати в кошик
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,31 +1,94 @@
 import React from "react";
+import "../styles/components/cartitem.css";
 
-function CartItem({ item, onRemove }) {
+function CartItem({
+  item,
+  onRemove,
+  onIncrement,   // опційно: () => void
+  onDecrement,   // опційно: () => void
+}) {
+  const { id, image, name, price, quantity } = item;
+
+  const format = (n) =>
+    new Intl.NumberFormat("uk-UA", { maximumFractionDigits: 2 }).format(n);
+
+  const total = price * quantity;
+  const canDecrement = quantity > 1;
+
+  const handleDec = () => {
+    if (onDecrement && canDecrement) onDecrement(id);
+  };
+  const handleInc = () => {
+    if (onIncrement) onIncrement(id);
+  };
+  const handleRemove = () => {
+    if (onRemove) onRemove(id);
+  };
+
   return (
-    <div className="flex items-center justify-between bg-white shadow-md rounded-xl p-3 mb-3">
-      <div className="flex items-center space-x-4">
+    <div className="cart-item" role="listitem" aria-label={`Товар: ${name}`}>
+      <div className="cart-item_img">
         <img
-          src={item.image}
-          alt={item.name}
-          className="w-16 h-16 rounded-lg object-cover"
+          src={image}
+          alt={name}
+          loading="lazy"
+          width={96}
+          height={96}
+          onError={(e) => { e.currentTarget.src = "/fallback-product.jpg"; }}
         />
-        <div>
-          <h3 className="font-semibold text-lg">{item.name}</h3>
-          <p className="text-gray-600 text-sm">
-            Ціна: {item.price} ₴ × {item.quantity}
-          </p>
-          <p className="text-gray-800 font-medium">
-            Разом: {item.price * item.quantity} ₴
-          </p>
-        </div>
       </div>
 
-      <button
-        onClick={() => onRemove(item.id)}
-        className="text-red-600 hover:text-red-800 transition"
-      >
-        ✕
-      </button>
+      <div className="cart-item_info">
+        <h3 className="cart-item_title">{name}</h3>
+        <p className="cart-item_meta">
+          Ціна: {format(price)} ₴ × {quantity}
+        </p>
+      </div>
+
+      <div className="cart-item_controls" aria-label="Керування кількістю та видалення">
+        <div className="qty" role="group" aria-label="Кількість">
+          <button
+            type="button"
+            onClick={handleDec}
+            disabled={!canDecrement}
+            aria-label="Зменшити кількість"
+            title="Зменшити"
+          >
+            −
+          </button>
+
+          <input
+            type="number"
+            value={quantity}
+            readOnly
+            aria-label="Кількість"
+            inputMode="numeric"
+          />
+
+          <button
+            type="button"
+            onClick={handleInc}
+            aria-label="Збільшити кількість"
+            title="Збільшити"
+          >
+            +
+          </button>
+        </div>
+
+        <p className="price" aria-live="polite">
+          Разом: {format(total)} ₴
+        </p>
+
+        <button
+          type="button"
+          className="remove-btn"
+          onClick={handleRemove}
+          aria-label={`Видалити ${name} з кошика`}
+          title="Видалити"
+        >
+          ✕
+        </button>
+      </div>
     </div>
   );
 }
