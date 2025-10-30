@@ -44,6 +44,7 @@ function Navbar() {
           <NavLink to="/shop">Магазин</NavLink>
           <NavLink to="/contact">Контакти</NavLink>
           <NavLink to="/about">Про нас</NavLink>
+          <NavLink to="/account">Мій акаунт</NavLink>
         </div>
 
         <button type="button" className="cart" onClick={goToCart} aria-label="Кошик">

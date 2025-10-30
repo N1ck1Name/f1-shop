@@ -1,0 +1,42 @@
+.account-page {
+  padding: 40px 0;
+  color: #fff;
+}
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.logout-btn {
+  background: #1a1a1b;
+  border: 1px solid #2a2a2b;
+  border-radius: 10px;
+  padding: 8px 14px;
+  color: #fff;
+  cursor: pointer;
+}
+.account-block {
+  background: #121214;
+  border: 1px solid #2a2a2b;
+  border-radius: 12px;
+  padding: 18px 16px;
+  margin-bottom: 18px;
+}
+.orders {
+  display: grid;
+  gap: 8px;
+}
+.orders li {
+  background: #0f0f10;
+  border: 1px solid #1e1e1f;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+@media (max-width: 600px) {
+  .account-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}

@@ -14,10 +14,10 @@ const Footer = () => {
         </nav>
 
         <div className="social" aria-label="Social links">
-          <a href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/N1ck1Name" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/N1ck1Name" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
         </div>

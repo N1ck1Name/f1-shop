@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import {Link} from "react-router-dom";
 import "../styles/components/cartitem.css";
 import { CartContext } from "../context/CartContext";
 
 function CartItem({ item }) {
-  // забираємо функції прямо з контексту
+
   const { removeFromCart, increment, decrement } = useContext(CartContext);
 
   const { id, image, name, price, quantity } = item;
@@ -44,7 +45,9 @@ function CartItem({ item }) {
       </div>
 
       <div className="cart-item_info">
-        <h3 className="cart-item_title">{name}</h3>
+        <Link to={`/product/${id}`} className="cart-item_title">
+          {name}
+        </Link>
         <p className="cart-item_meta">
           Ціна: {format(price)} ₴ × {quantity}
         </p>

@@ -3,6 +3,9 @@
 }
 
 .shop-page .container {
-  width: min(1200px, 92%);
-  margin: 0 auto;
+  background: rgba(15,15,16,0.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.02);
+  border-radius: 16px;
+  padding: 18px;
 }
