@@ -8,7 +8,7 @@
   border-bottom: 1px solid #1e1e1f;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 9999;
 }
 
 /* Контейнер усередині */
@@ -35,9 +35,11 @@
 
 /* === SEARCH === */
 .search {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
+  z-index: 1;
 }
 .search input {
   width: 100%;
@@ -117,6 +119,7 @@
   color: #e7e7e7;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
+  z-index: 2;
 }
 .cart:hover {
   background: #1a1a1b;

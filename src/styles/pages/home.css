@@ -1,6 +1,6 @@
 /* ===== Головний контейнер ===== */
 .home {
-  min-height: 100vh;
+  min-height: calc(100vh - 64px); /* 64px = висота navbar */
   background-image: url("https://images.unsplash.com/photo-1606150934615-3bbbf2b68e45?auto=format&fit=crop&w=1800&q=80");
   background-size: cover;
   background-position: center;
@@ -8,7 +8,9 @@
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  padding-top: 24px;
+  padding: 40px 16px 40px; /* зверху більше, щоб не липло до navbar */
+  position: relative;
+  z-index: 1; /* нижче за navbar */
 }
 
 /* ===== Контейнер з контентом ===== */
@@ -19,7 +21,7 @@
   text-align: center;
   max-width: 720px;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
   animation: fadeIn 1.2s ease forwards;
 }
@@ -77,6 +79,14 @@
 
 /* ===== Адаптивність ===== */
 @media (max-width: 768px) {
+  .home {
+    padding: 32px 14px 32px;
+  }
+
+  .home-content {
+    padding: 36px 26px;
+  }
+
   .home-content h1 {
     font-size: 2.3rem;
   }

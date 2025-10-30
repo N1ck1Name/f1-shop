@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/components/cartitem.css";
+import { CartContext } from "../context/CartContext";
 
-function CartItem({
-  item,
-  onRemove,
-  onIncrement,   // опційно: () => void
-  onDecrement,   // опційно: () => void
-}) {
+function CartItem({ item }) {
+  // забираємо функції прямо з контексту
+  const { removeFromCart, increment, decrement } = useContext(CartContext);
+
   const { id, image, name, price, quantity } = item;
 
   const format = (n) =>
@@ -16,13 +15,17 @@ function CartItem({
   const canDecrement = quantity > 1;
 
   const handleDec = () => {
-    if (onDecrement && canDecrement) onDecrement(id);
+    if (canDecrement) {
+      decrement(id);
+    }
   };
+
   const handleInc = () => {
-    if (onIncrement) onIncrement(id);
+    increment(id);
   };
+
   const handleRemove = () => {
-    if (onRemove) onRemove(id);
+    removeFromCart(id);
   };
 
   return (
@@ -34,7 +37,9 @@ function CartItem({
           loading="lazy"
           width={96}
           height={96}
-          onError={(e) => { e.currentTarget.src = "/fallback-product.jpg"; }}
+          onError={(e) => {
+            e.currentTarget.src = "/fallback-product.jpg";
+          }}
         />
       </div>
 
@@ -45,7 +50,10 @@ function CartItem({
         </p>
       </div>
 
-      <div className="cart-item_controls" aria-label="Керування кількістю та видалення">
+      <div
+        className="cart-item_controls"
+        aria-label="Керування кількістю та видалення"
+      >
         <div className="qty" role="group" aria-label="Кількість">
           <button
             type="button"

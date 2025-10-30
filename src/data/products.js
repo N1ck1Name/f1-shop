@@ -5,7 +5,7 @@ export const products = [
     category: "Одяг",
     price: 50,
     rating: 4.8,
-    image: "/assets/mercedes-shirt.jpg",
+    image: "/images/mersedes_tshirt.jpeg",
     description: "Футболка Mercedes з офіційного мерчу сезону 2025"
   },
   {
@@ -23,7 +23,7 @@ export const products = [
     category: "Моделі",
     price: 120,
     rating: 4.9,
-    image: "/assets/ferrari-model.jpg",
+    image: "/images/ferrari_car.jpg",
     description: "Колекційна модель боліда Ferrari 1:43"
   },
   // додай ще 5–10 товарів
